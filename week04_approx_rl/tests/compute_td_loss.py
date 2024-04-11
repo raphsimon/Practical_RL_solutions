@@ -138,6 +138,7 @@ def test_compute_td_loss_vanilla(compute_td_loss: ComputeTdLossProtocol):
             gamma=sample["gamma"],
         ).item()
         abs_diff = abs(ans - sample["answer"])
+        print(f'abs_diff = abs(ans - sample["answer"]): {abs_diff} = abs({ans} - {sample["answer"]})')
         assert abs_diff < 1e-8, abs_diff
 
 
@@ -211,4 +212,5 @@ def test_compute_td_loss_double(compute_td_loss: ComputeTdLossProtocol):
             gamma=sample["gamma"],
         ).item()
         abs_diff = abs(ans - sample["answer"])
+        print(f'abs_diff = abs(ans - sample["answer"]): {abs_diff} = abs({ans} - {sample["answer"]})')
         assert abs_diff < 1e-8, abs_diff
